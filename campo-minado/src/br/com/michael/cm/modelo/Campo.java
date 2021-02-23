@@ -98,12 +98,16 @@ public class Campo {
 		} else if (aberto && minasNaVizinhaca() > 0) {
 			return Long.toString(minasNaVizinhaca());
 		} else if (aberto) {
-			return "";
+			return " ";
 		} else {
 			return "?";
 		}
 	}
 
+	void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+	
 	public boolean isAberto() {
 		return aberto;
 	}
