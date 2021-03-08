@@ -4,7 +4,7 @@
 ## <a name="indice">Índice</a>
   1. [Sobre](#sobre)
   2. [Projetos](#projetos)
-  3. [Agradecimentos](#gradecimentos)
+  3. [Agradecimentos](#agradecimentos)
 
 ***
 
