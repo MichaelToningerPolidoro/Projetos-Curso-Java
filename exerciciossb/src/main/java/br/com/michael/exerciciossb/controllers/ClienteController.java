@@ -3,6 +3,7 @@ package br.com.michael.exerciciossb.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.michael.exerciciossb.models.Cliente;
@@ -19,6 +20,13 @@ public class ClienteController {
 	@GetMapping("/{id}")
 	public static Cliente obterClientePorId1(@PathVariable int id) {
 		return new Cliente(id, "Maria", "12345678910");
+	}
+	
+	@GetMapping
+	public static Cliente obterCLientePorId2(
+				@RequestParam(name = "id", defaultValue = "1") int id
+			) {
+		return new Cliente(id, "joão", "12345678910");
 	}
 	
 }
