@@ -11,7 +11,12 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String nome;
+	
+	public Produto(String nome) {
+		this.nome = nome;
+	}
 	
 	public int getId() {
 		return id;
