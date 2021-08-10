@@ -13,9 +13,13 @@ public class Produto {
 	private int id;
 	
 	private String nome;
+	private float preco;
+	private float desconto;
 	
-	public Produto(String nome) {
-		this.nome = nome;
+	public Produto(String nome, float preco, float desconto) {
+		setNome(nome);
+		setPreco(preco);
+		setDesconto(desconto);
 	}
 	
 	public int getId() {
@@ -32,5 +36,25 @@ public class Produto {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public float getPreco() {
+		return preco;
+	}
+	
+	public void setPreco(float preco) {
+		if (preco > 0f) {
+			this.preco = preco;			
+		}
+	}
+	
+	public float getDesconto() {
+		return desconto;
+	}
+	
+	public void setDesconto(float desconto) {
+		if (desconto >= 0f && desconto <= 1f) {
+			this.desconto = desconto;			
+		}
 	}
 }
