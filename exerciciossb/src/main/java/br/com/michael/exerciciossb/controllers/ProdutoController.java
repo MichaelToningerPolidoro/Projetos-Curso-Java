@@ -5,10 +5,9 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +20,8 @@ import br.com.michael.exerciciossb.model.repositories.ProdutoRepository;
 @RequestMapping("/api/produtos")
 public class ProdutoController {
 
+	private static final String PATH_ID = "/{id}";
+	
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
@@ -35,8 +36,13 @@ public class ProdutoController {
 		return produtoRepository.findAll();
 	}
 	
-	@GetMapping(path="/{id}")
+	@GetMapping(path = PATH_ID)
 	public Optional<Produto> obterProdutoPorId(@PathVariable int id) {
 		return produtoRepository.findById(id);
+	}
+	
+	@DeleteMapping(path = PATH_ID)
+	public void excluirProduto(@PathVariable int id) {
+		produtoRepository.deleteById(id);
 	}
 }
