@@ -25,10 +25,17 @@ public class Produto {
 	@Max(1)
 	private float desconto;
 	
+	public Produto() {}
+	
 	public Produto(String nome, float preco, float desconto) {
 		setNome(nome);
 		setPreco(preco);
 		setDesconto(desconto);
+	}
+	
+	public Produto(int id, String nome, float preco, float desconto) {
+		this(nome, preco, desconto);
+		setId(id);
 	}
 	
 	public int getId() {
